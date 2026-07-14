@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Blessing!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card" id="card">
+  <div class="card-inner">
+
+    <!-- Front -->
+    <div class="card-front">
+      <h1>🎉 Happy Birthday 🎉</h1>
+      <h2>Blessing ❤️</h2>
+      <p>Click to open your surprise!</p>
+    </div>
+
+    <!-- Inside -->
+    <div class="card-back">
+      <h2>Dear Blessing,</h2>
+
+      <p>
+        Wishing you a day filled with love, laughter, and unforgettable
+        memories. Thank you for being such an amazing friend.
+      </p>
+
+      <h3>🎂 Happy Birthday! 🎂</h3>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 320px;
+    height: 420px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-front {
+    background: white;
+}
+
+.card-back {
+    background: #ff4d6d;
+    color: white;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+</style>
+<script>
+const card = document.getElementById("card");
+
+card.addEventListener("click", () => {
+    card.classList.toggle("flip");
+});
+
+</script>
